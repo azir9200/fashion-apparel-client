@@ -4,7 +4,7 @@ import { useLoaderData } from "react-router-dom";
 const BrandDetails = () => {
 
   const brand = useLoaderData();
-  const { photo, type } = brand;
+  const { photo } = brand;
   console.log(brand);
 
   console.log(brand.type);
@@ -12,8 +12,8 @@ const BrandDetails = () => {
     <div>
       <img src={photo} alt="" />
 
-      <h1> {type} </h1>
-      <h1>Details  brands here  </h1>
+      <h1>  </h1>
+      <h1>Details  brands here {brand.length} </h1>
 
     </div>
   );

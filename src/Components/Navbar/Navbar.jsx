@@ -23,6 +23,9 @@ const Navbar = () => {
           <li>
             <NavLink to="/allBrands" activeClassName="text-red-500">AllBrands</NavLink>
           </li>
+          <li>
+            <NavLink to="/allCards" activeClassName="text-red-500">AllCards</NavLink>
+          </li>
         </ul>
 
         {/* Mobile Menu (Hamburger Menu) */}

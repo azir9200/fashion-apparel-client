@@ -9,6 +9,7 @@ import AllBrands from "../Components/AllBrands/AllBrands";
 import BrandDetails from "../Components/BrandDetails/BrandDetails";
 import Register from "../Components/Pages/Login/Register";
 import ErrorPage from "../Components/ShareFiles/ErrorPage/ErrorPage";
+import AllCards from "../Components/AllCards/AllCards";
 
 const routers = createBrowserRouter([
   {
@@ -39,8 +40,12 @@ const routers = createBrowserRouter([
         element: <AllBrands></AllBrands>
       },
       {
-        path: '/brandDetails/:id',
-        loader: ({ params }) => fetch(`https://fashion-apparel-server.vercel.app/allbrands/${params.id}`),
+        path: '/allCards',
+        element: <AllCards></AllCards>
+      },
+      {
+        path: '/brandDetails',
+        loader: () => fetch('http://localhost:5000/allCards'),
         element: <BrandDetails></BrandDetails>
       }
 
