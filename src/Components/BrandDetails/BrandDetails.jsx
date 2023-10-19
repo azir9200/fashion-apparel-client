@@ -3,11 +3,11 @@ import { useLoaderData } from "react-router-dom";
 
 const BrandDetails = () => {
 
-  // const brand = useLoaderData();
   const brand = useLoaderData();
   const { photo, type } = brand;
+  console.log(brand);
 
-  console.log(brand.photo);
+  console.log(brand.type);
   return (
     <div>
       <img src={photo} alt="" />
