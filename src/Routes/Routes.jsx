@@ -10,6 +10,7 @@ import BrandDetails from "../Components/BrandDetails/BrandDetails";
 import Register from "../Components/Pages/Login/Register";
 import ErrorPage from "../Components/ShareFiles/ErrorPage/ErrorPage";
 import AllCards from "../Components/AllCards/AllCards";
+import Adidas from "../Components/Brands/Adidas";
 
 const routers = createBrowserRouter([
   {
@@ -47,6 +48,11 @@ const routers = createBrowserRouter([
         path: '/brandDetails/:name',
         loader: ({ params }) => fetch(`http://localhost:5000/allCards/${params.name}`),
         element: <BrandDetails></BrandDetails>
+      },
+      {
+        path: '/adidas/:name',
+        loader: ({ params }) => fetch(`http://localhost:5000/allCards/${params.name}`),
+        element: <Adidas></Adidas>
       }
 
     ]

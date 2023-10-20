@@ -1,4 +1,5 @@
 import { useLoaderData } from "react-router-dom";
+import BrandShow from "../BrandShow/BrandShow";
 
 
 const BrandDetails = () => {
@@ -19,19 +20,25 @@ const BrandDetails = () => {
 
   console.log(brands);
   return (
-    <div>
-      <h1>  </h1>
-      <h1>Details  brands here {brands.length} </h1>
+    <div className="justify-center items-center "  >
 
-      {
-        brands.map(brand => <p key={brand.id}>
-          <p> {brand.branName}   </p>
-          {brand.type}
-          <button onClick={() => handleDelete(brand._id)} >Delete</button>
-        </p>)
-      }
 
-    </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 " >
+
+
+        {
+          brands.map(brand => <BrandShow
+            key={brand.id}
+            brand={brand}
+          ></BrandShow>)
+        }
+
+      </div>
+
+
+
+
+    </div >
   );
 };
 
