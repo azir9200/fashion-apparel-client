@@ -48,7 +48,7 @@ const AllCards = () => {
 
   return (
     <div className="bg-slate-100 p-20 tex">
-      <h2 className="text-4xl font-semibold" >Add new Brands</h2>
+      <h2 className="text-4xl font-semibold" >Add new Cards</h2>
       <form onSubmit={handleAddCards} className="items-center-center" >
 
 
