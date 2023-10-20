@@ -3,17 +3,33 @@ import { useLoaderData } from "react-router-dom";
 
 const BrandDetails = () => {
 
-  const brand = useLoaderData();
-  const { photo } = brand;
-  console.log(brand);
+  const brands = useLoaderData();
 
-  console.log(brand.type);
+  const handleDelete = _id => {
+
+    console.log('Delete', _id)
+    fetch(`http://localhost:5000/allCards/${_id}`, {
+      method: 'DELETE'
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+      })
+  }
+
+  console.log(brands);
   return (
     <div>
-      <img src={photo} alt="" />
-
       <h1>  </h1>
-      <h1>Details  brands here {brand.length} </h1>
+      <h1>Details  brands here {brands.length} </h1>
+
+      {
+        brands.map(brand => <p key={brand.id}>
+          <p> {brand.branName}   </p>
+          {brand.type}
+          <button onClick={() => handleDelete(brand._id)} >Delete</button>
+        </p>)
+      }
 
     </div>
   );

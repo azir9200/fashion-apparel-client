@@ -40,10 +40,7 @@ const AllCards = () => {
             confirmButtonText: 'Done'
           })
         }
-
       })
-
-
   }
 
   return (

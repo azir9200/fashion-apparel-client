@@ -20,7 +20,7 @@ const BrandCard = ({ allbrand }) => {
 
 
 
-      <Link to={`/brandDetails/${_id}`} >
+      <Link to={`/brandDetails/${brandName}`} >
         <button
           className="block p w-full text-3xl h-8 text-white font-bold rounded-lg bg-blue-400"
           type="button"  >  Explore Our Brand   </button></Link>
