@@ -2,8 +2,10 @@
 
 const HomeOne = () => {
   return (
-    <div className="card card-side bg-base-100 shadow-xl">
+    <div className="card lg:flex card-side bg-base-100 shadow-xl">
+
       <figure><img src="https://i.ibb.co/YfZJsKF/logo1.pnghttps://i.ibb.co/LRRQWWv/banner1.png" alt="Movie" /></figure>
+
       <div className="card-body bg-slate-200 w-2/5 shadow-lg ">
         <h2 className="card-title  text-4xl ">Best Deal You Will Find Here.</h2>
         <p className="text-2xl" >Your Stisfaction is our Succss.</p>

@@ -10,7 +10,7 @@ const Provider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
 
-  const createUser = (email, password) => {
+  const createRegiste = (email, password) => {
     setLoading(true)
     return createUserWithEmailAndPassword(auth, email, password)
   }
@@ -18,7 +18,7 @@ const Provider = ({ children }) => {
   const userInfo = {
     register,
     loading,
-    createUser,
+    createRegiste,
   }
 
   return (

@@ -1,7 +1,21 @@
 
-import { NavLink } from 'react-router-dom';
+import { useContext } from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import { AuthContext } from '../../Providers/Provider';
+
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleSignOut = () => {
+    logOut()
+      .then()
+      .catch()
+  }
+
+
+
+
   return (
     <nav className="bg-blue-100 shadow-lg">
       <div className="container mx-auto  md:flex justify-between items-center py-4">
@@ -10,7 +24,7 @@ const Navbar = () => {
           <h4 className="text-2xl text-green-500 font-semibold ml-2">FASHION Fusion</h4>
         </div>
 
-        <ul className=" md:flex gap-6 text-xl font-semibold text-gray-700">
+        <ul className=" md:flex gap-6 text-center text-xl font-semibold text-gray-700">
           <li>
             <NavLink to="/" activeClassName="text-red-500">Home</NavLink>
           </li>
@@ -18,17 +32,37 @@ const Navbar = () => {
             <NavLink to="/addproducts" activeClassName="text-red-500"> Add Products</NavLink>
           </li>
           <li>
-            <NavLink to="/cart" activeClassName="text-red-500">Cart</NavLink>
+            <NavLink to="/myCart" activeClassName="text-red-500">My Cart</NavLink>
           </li>
           <li>
             <NavLink to="/login" activeClassName="text-red-500">Login</NavLink>
           </li>
-          <li>
-            <NavLink to="/allBrands" activeClassName="text-red-500">AllBrands</NavLink>
+
+
+
+
+          <li className="navbar-end">
+            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+              <div className="w-10 rounded-full">
+                {/* <img src={userDefaultPic} /> */}
+              </div>
+            </label>
+            {
+              user ?
+                <button onClick={handleSignOut} className="btn">Sign Out</button>
+                :
+                <Link to="/login">
+                  <button className="btn">Login</button>
+                </Link>
+            }
+
           </li>
           <li>
             <NavLink to="/allCards" activeClassName="text-red-500">AllCards</NavLink>
           </li>
+
+
+
         </ul>
 
       </div>

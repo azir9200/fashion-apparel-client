@@ -8,8 +8,8 @@ const BrandShow = ({ brand }) => {
   return (
     <div>
 
-      <div className="relative flex flex-col text-gray-700 bg-white shadow-md rounded-xl bg-clip-border">
-        <div className="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white rounded-xl bg-clip-border">
+      <div className=" flex flex-col  text-gray-700 bg-white shadow-md rounded-xl bg-clip-border">
+        <div className=" mx-4 mt-4 w-80 h-80 overflow-hidden text-gray-700 bg-white rounded-xl bg-clip-border">
           <img
             src={photo}
             className=" "
