@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 
 const Register = () => {
 
-  const { createUser } = useContext(AuthContext)
+  const { createRegister } = useContext(AuthContext)
 
   const handleRegister = (event) => {
 
@@ -18,17 +18,18 @@ const Register = () => {
     const password = form.password.value;
     console.log(name, email, password);
 
-    createUser(email, password)
+    createRegister(name, email, password)
       .then(result => {
         console.log(result.user);
       })
-    const user = { email };
-    fetch('http://localhost:5000/allbrands', {
+
+    const register = { email };
+    fetch('http://localhost:5000/allCards', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'
       },
-      body: JSON.stringify(user)
+      body: JSON.stringify(register)
     })
       .then(res => res.json())
       .then(data => {
@@ -41,14 +42,10 @@ const Register = () => {
             confirmButtonText: 'Done'
           })
         }
-
       })
-
-
       .catch(error => {
         console.error(error)
       })
-
   }
 
   return (

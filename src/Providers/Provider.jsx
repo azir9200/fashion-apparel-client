@@ -6,7 +6,7 @@ import app from "../firebase/firebase.config";
 const auth = getAuth(app)
 export const AuthContext = createContext(null);
 const Provider = ({ children }) => {
-  const [user, setUser] = useState(null);
+  const [register, setRegister] = useState(null);
   const [loading, setLoading] = useState(true);
 
 
@@ -16,7 +16,7 @@ const Provider = ({ children }) => {
   }
 
   const userInfo = {
-    user,
+    register,
     loading,
     createUser,
   }

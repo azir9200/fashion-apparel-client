@@ -11,6 +11,7 @@ import Register from "../Components/Pages/Login/Register";
 import ErrorPage from "../Components/ShareFiles/ErrorPage/ErrorPage";
 import AllCards from "../Components/AllCards/AllCards";
 import Adidas from "../Components/Brands/Adidas";
+import Cart from "../Components/Pages/Cart/Cart";
 
 const routers = createBrowserRouter([
   {
@@ -32,8 +33,12 @@ const routers = createBrowserRouter([
         element: <Register></Register>
       },
       {
-        path: "/products",
+        path: "/addproducts",
         element: <Products></Products>
+      },
+      {
+        path: "/cart",
+        element: <Cart></Cart>
       },
 
       {
