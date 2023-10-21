@@ -7,7 +7,7 @@ const BrandCard = ({ allbrand }) => {
 
   return (
 
-    <div className="gap-6 items-center justify-center shadow-xl" >
+    <div className="gap-6 items-center justify-center  shadow-xl" >
 
       <img className="w-60  h-56" src={photo} alt="" />
 
@@ -18,7 +18,7 @@ const BrandCard = ({ allbrand }) => {
 
         <Link to={`/brandDetails/${brandName}`} >
           <button
-            className=" text-2xl text-lime-500 border font-bold rounded-lg "
+            className=" text-3xl text-lime-500 border font-bold rounded-lg "
             type="button"  >  Explore More   </button></Link>
 
 

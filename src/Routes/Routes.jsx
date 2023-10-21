@@ -10,7 +10,6 @@ import BrandDetails from "../Components/BrandDetails/BrandDetails";
 import Register from "../Components/Pages/Login/Register";
 import ErrorPage from "../Components/ShareFiles/ErrorPage/ErrorPage";
 import AllCards from "../Components/AllCards/AllCards";
-import Adidas from "../Components/Brands/Adidas";
 import Cart from "../Components/Pages/Cart/Cart";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import CartDetails from "../Components/CartDetails/CartDetails";
@@ -55,16 +54,20 @@ const routers = createBrowserRouter([
         path: '/cartDetails/:id',
         element: <PrivateRoute><CartDetails></CartDetails>  </PrivateRoute>
       },
+      // optional , remove later
+      {
+        path: '/cartDetails/:id',
+        element: <CartDetails></CartDetails>,
+        loader: ({ _id }) => fetch(`http://localhost:5000/allCards/${_id}`),
+
+      },
+      //  until here
       {
         path: '/brandDetails/:name',
         loader: ({ params }) => fetch(`http://localhost:5000/allCards/${params.name}`),
         element: <BrandDetails></BrandDetails>
       },
-      {
-        path: '/adidas/:name',
-        loader: ({ params }) => fetch(`http://localhost:5000/allCards/${params.name}`),
-        element: <Adidas></Adidas>
-      }
+
 
     ]
   }
