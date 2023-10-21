@@ -12,7 +12,7 @@ const Home = () => {
   console.log(allbrands);
   return (
     <div className=" mt-8" >
-      {/* <BannerPage></BannerPage> */}
+      <BannerPage></BannerPage>
       <h2 className=" bg-emerald-200 text-center text-4xl">Choose One Of Your Best Brands from our Site    </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 " >

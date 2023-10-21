@@ -1,10 +1,9 @@
-import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 
-const BrandShow = ({ brand }) => {
+const CartDetails = () => {
 
-  const { _id, name, photo, brandName, price,
-    description, rating } = brand;
+  const { id } = useParams();
 
   return (
     <div>
@@ -27,7 +26,7 @@ const BrandShow = ({ brand }) => {
             <p className="block font-sans text-2xl antialiased font-medium leading-relaxed text-blue-gray-900">
               Price : {price}
             </p>
-            <p className="block font-sans text-xl antialiased font-medium leading-relaxed text-blue-gray-900">
+            <p className="block font-sans text-2xl antialiased font-medium leading-relaxed text-blue-gray-900">
               Rating : {rating}
             </p>
           </div>
@@ -36,20 +35,15 @@ const BrandShow = ({ brand }) => {
           </p>
         </div>
         <div className="p-6 pt-0">
-          <Link to={`/cartDetails/${_id}`} >
-
-            <button
-              className="block w-full bg-lime-300  select-none rounded-lg bg-blue-gray-900/10 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-blue-gray-900 transition-all hover:scale-105 focus:scale-105 focus:opacity-[0.85] active:scale-100 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-              type="button"  >
-              Add to Cart
-            </button>
-          </Link>
+          <button
+            className="block w-full bg-lime-300  select-none rounded-lg bg-blue-gray-900/10 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-blue-gray-900 transition-all hover:scale-105 focus:scale-105 focus:opacity-[0.85] active:scale-100 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+            type="button"  >
+            Add to Cart
+          </button>
         </div>
       </div>
-
-
     </div>
   );
 };
 
-export default BrandShow;
+export default CartDetails;

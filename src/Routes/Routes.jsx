@@ -12,6 +12,8 @@ import ErrorPage from "../Components/ShareFiles/ErrorPage/ErrorPage";
 import AllCards from "../Components/AllCards/AllCards";
 import Adidas from "../Components/Brands/Adidas";
 import Cart from "../Components/Pages/Cart/Cart";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import CartDetails from "../Components/CartDetails/CartDetails";
 
 const routers = createBrowserRouter([
   {
@@ -48,6 +50,10 @@ const routers = createBrowserRouter([
       {
         path: '/allCards',
         element: <AllCards></AllCards>
+      },
+      {
+        path: '/cartDetails/:id',
+        element: <PrivateRoute><CartDetails></CartDetails>  </PrivateRoute>
       },
       {
         path: '/brandDetails/:name',

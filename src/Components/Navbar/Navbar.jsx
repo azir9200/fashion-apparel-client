@@ -13,9 +13,6 @@ const Navbar = () => {
       .catch()
   }
 
-
-
-
   return (
     <nav className="bg-blue-100 shadow-lg">
       <div className="container mx-auto  md:flex justify-between items-center py-4">
@@ -24,7 +21,7 @@ const Navbar = () => {
           <h4 className="text-2xl text-green-500 font-semibold ml-2">FASHION Fusion</h4>
         </div>
 
-        <ul className=" md:flex gap-6 text-center text-xl font-semibold text-gray-700">
+        <ul className=" md:flex gap-8 justify-evenly text-center  text-xl font-semibold text-gray-700">
           <li>
             <NavLink to="/" activeClassName="text-red-500">Home</NavLink>
           </li>
@@ -39,29 +36,25 @@ const Navbar = () => {
           </li>
 
 
-
-
-          <li className="navbar-end">
-            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+          <li >
+            {/* <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="w-10 rounded-full">
-                {/* <img src={userDefaultPic} /> */}
+                <img src={userDefaultPic} />
               </div>
-            </label>
-            {
+            </label> */}
+            {/* {
               user ?
                 <button onClick={handleSignOut} className="btn">Sign Out</button>
                 :
                 <Link to="/login">
                   <button className="btn">Login</button>
                 </Link>
-            }
+            } */}
 
           </li>
           <li>
             <NavLink to="/allCards" activeClassName="text-red-500">AllCards</NavLink>
           </li>
-
-
 
         </ul>
 
