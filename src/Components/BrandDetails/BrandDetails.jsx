@@ -21,8 +21,10 @@ const BrandDetails = () => {
         }
 
       </div>
-      <div className="w-1/3" >
 
+      {/* Advertiese Section for the main page  */}
+
+      <div className="w-1/3" >
 
         <div className="relative flex flex-col mt-6 text-gray-700 bg-white shadow-md w-96 rounded-xl bg-clip-border">
           <p className="text-2xl bg-red-200" >Avertise for Now</p>
@@ -92,10 +94,6 @@ const BrandDetails = () => {
         </div>
 
       </div>
-
-
-
-
     </div >
   );
 };

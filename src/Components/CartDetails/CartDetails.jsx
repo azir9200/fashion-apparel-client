@@ -19,6 +19,8 @@ const CartDetails = () => {
   return (
     <div>
 
+      <h1 className="3xl">Product Details will be here</h1>
+
       {/* <div className=" flex flex-col  text-gray-700 bg-white shadow-md rounded-xl bg-clip-border">
         <div className=" mx-4 mt-4 w-80 h-80 overflow-hidden text-gray-700 bg-white rounded-xl bg-clip-border">
           <img

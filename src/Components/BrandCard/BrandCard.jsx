@@ -7,7 +7,7 @@ const BrandCard = ({ allbrand }) => {
 
   return (
 
-    <div className="gap-6 items-center justify-center  shadow-xl" >
+    <div className=" w-72 items-center justify-center  shadow-2xl" >
 
       <img className="w-60  h-56" src={photo} alt="" />
 
@@ -23,16 +23,6 @@ const BrandCard = ({ allbrand }) => {
 
 
       </div>
-
-
-
-      {/* <Link to={`/brandDetails/${brandName}`} >
-        <button
-          className="block p w-full text-3xl h-8 text-white font-bold rounded-lg bg-blue-400"
-          type="button"  >  Explore Our Brand   </button></Link> */}
-
-
-
 
     </div>
   );

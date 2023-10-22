@@ -59,7 +59,7 @@ const routers = createBrowserRouter([
       {
         path: '/cartDetails/:id',
         element: <CartDetails></CartDetails>,
-        loader: ({ _id }) => fetch(`http://localhost:5000/allCards/${_id}`),
+        loader: ({ _id }) => fetch(`http://localhost:5173/cartDetails/${_id}`),
 
       },
       //  until here
