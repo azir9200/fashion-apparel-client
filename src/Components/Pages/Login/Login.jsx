@@ -1,12 +1,42 @@
+import { GoogleAuthProvider, getAuth, signInWithPopup, signOut } from "firebase/auth";
 import { Link } from "react-router-dom";
+import app from "../../../firebase/firebase.config";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../../Providers/Provider";
 
 
 const Login = () => {
+  const [user, signOut] = useContext(AuthContext);
+
+  // const auth = getAuth(app);
+  // const provider = new GoogleAuthProvider()
+
 
   const handleLogin = (event) => {
 
-    event.preventDefault();
+    // signInWithPopup(auth, provider)
+    //   .then(result => {
+    //     const user = result.user;
+    //     console.log(user);
+    //   })
+    //   .catch(error => {
+    //     console.log(error)
+    //   })
 
+
+    const handleSignOut = () => {
+      signOut()
+        .then(result => {
+          console.log(result);
+
+        })
+        .catch(error => {
+          console.log(error)
+        })
+    }
+
+
+    event.preventDefault();
     const form = event.target;
     const name = form.name.value;
     const email = form.email.value;
@@ -38,12 +68,21 @@ const Login = () => {
               </label>
             </div>
             <div className="form-control mt-6">
-              <button className="btn btn-primary">Login</button>
+
+              {user ?
+                <button onClick={handleSignOut} className="btn btn-primary"  >Signout </button>
+                :
+                <button className="btn btn-primary">Login</button>
+              }
+
               <label className="label">
                 <a href="#" className="label-text-alt link link-hover">Already Have an Account ?  <Link to='/register' >Register</Link> </a>
+
               </label>
             </div>
           </form>
+
+
         </div>
       </div>
     </div>

@@ -13,6 +13,7 @@ import AllCards from "../Components/AllCards/AllCards";
 import Cart from "../Components/Pages/Cart/Cart";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import CartDetails from "../Components/CartDetails/CartDetails";
+import Signup from "../Components/Pages/Login/Signup";
 
 const routers = createBrowserRouter([
   {
@@ -66,6 +67,10 @@ const routers = createBrowserRouter([
         path: '/brandDetails/:name',
         loader: ({ params }) => fetch(`http://localhost:5000/allCards/${params.name}`),
         element: <BrandDetails></BrandDetails>
+      },
+      {
+        path: '/signup',
+        element: <Signup></Signup>
       },
 
 
