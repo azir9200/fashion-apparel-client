@@ -1,62 +1,78 @@
-import { Link, useLoaderData, useParams } from "react-router-dom";
+import { useState } from "react";
+import { Link, useLoaderData } from "react-router-dom";
 
 
 const CartDetails = () => {
+  const [addToCart, setAddToCart] = useState([]);
+
 
   const carts = useLoaderData()
-  const { id } = useParams()
-  const idInt = parseInt(id);
-  const cart = carts.find(cart => cart.id === idInt);
-  console.log(cart)
+
+  const { name, photo, brandName, price,
+    description, rating } = carts;
 
 
-
-
-  // const { _id, name, photo, brandName, price,
-  //   description, rating } = brand;
-
+  const handleAddCart = (carts) => {
+    setAddToCart([...addToCart, carts])
+  };
+  console.log(addToCart);
 
   return (
-    <div>
+    <div className="items-center content-center flex" >
 
-      <h1 className="3xl">Product Details will be here</h1>
-
-      {/* <div className=" flex flex-col  text-gray-700 bg-white shadow-md rounded-xl bg-clip-border">
-        <div className=" mx-4 mt-4 w-80 h-80 overflow-hidden text-gray-700 bg-white rounded-xl bg-clip-border">
+      <div className="relative md:flex items-center justify-center text-center w-full max-w-[48rem] flex-row rounded-xl bg-white bg-clip-border text-gray-700 shadow-xl">
+        <div className="relative w-96 h-80 m-0 overflow-hidden text-gray-700 bg-white rounded-r-none shrink-0 rounded-xl bg-clip-border">
           <img
             src={photo}
-            className=" "
+            alt="image"
+            className="object-cover w-full h-full"
           />
         </div>
         <div className="p-6">
-          <div className=" items-center justify-between mb-2">
-            <p className="block font-sans text-4xl antialiased font-medium leading-relaxed text-blue-gray-900">
-              {name}
-            </p>
-            <p className="block font-sans text-2xl antialiased font-medium leading-relaxed text-blue-gray-900">
-              Brand Name: {brandName}
-            </p>
-            <p className="block font-sans text-2xl antialiased font-medium leading-relaxed text-blue-gray-900">
-              Price : {price}
-            </p>
-            <p className="block font-sans text-2xl antialiased font-medium leading-relaxed text-blue-gray-900">
-              Rating : {rating}
-            </p>
-          </div>
-          <p className="block font-sans text-sm antialiased font-normal leading-normal text-gray-700 opacity-75">
-            About : {description}
+          <h6 className="block mb-4 font-sans text-2xl antialiased font-semibold leading-relaxed tracking-normal text-lime-500">
+            Product Name:  {name}
+          </h6>
+          <h4 className="block mb-2 font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
+            BrandName: {brandName}
+          </h4>
+          <p className="block mb-8 font-sans text-2xl antialiased font-semibold leading-relaxed text-gray-700">
+            Price:  {price}
           </p>
-        </div>
-        <div className="p-6 pt-0">
-          <Link to={`/cartDetails/${_id}`} >       <button
-            className="block w-full bg-lime-300  select-none rounded-lg bg-blue-gray-900/10 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-blue-gray-900 transition-all hover:scale-105 focus:scale-105 focus:opacity-[0.85] active:scale-100 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-            type="button"  >
-            Add to Cart
-          </button>  </Link>
-        </div>
-      </div> */}
+          <p className="block mb-8 font-sans text-base antialiased font-normal leading-relaxed text-gray-700">
+            <span className="text-xl font-semibold" > About Our Product:</span>   {description}
+          </p>
+          <p>Rating: {rating}</p>
+          <a className="inline-block" href="#">
 
-    </div>
+            <Link to='/myCart'  >
+
+              < button
+                onClick={() => handleAddCart(carts)}
+
+                className="flex items-center gap-2 px-6 py-3 font-sans text-2xl font-bold text-center text-green-500 uppercase align-middle transition-all rounded-lg select-none hover:bg-pink-500/10 active:bg-pink-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                type="button"      >
+                Add to Cart
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  // stroke-width="2"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                  className="w-4 h-4"
+                >
+                  <path
+                    // stroke-linecap="round"
+                    // stroke-linejoin="round"
+                    d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+                  ></path>
+                </svg>
+              </button>    </Link>
+          </a>
+        </div>
+      </div>
+
+    </div >
   );
 };
 

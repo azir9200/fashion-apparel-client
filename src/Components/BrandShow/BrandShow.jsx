@@ -3,8 +3,11 @@ import { Link } from "react-router-dom";
 
 const BrandShow = ({ brand }) => {
 
+
   const { _id, name, photo, brandName, price,
     description, rating } = brand;
+
+
 
   return (
     <div>
@@ -46,7 +49,6 @@ const BrandShow = ({ brand }) => {
           </Link>
         </div>
       </div>
-
 
     </div>
   );

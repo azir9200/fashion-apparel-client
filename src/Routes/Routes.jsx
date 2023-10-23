@@ -36,13 +36,8 @@ const routers = createBrowserRouter([
       },
       {
         path: "/addProducts",
-        element: <Products></Products>
+        element: <PrivateRoute>   <Products></Products> </PrivateRoute>
       },
-      {
-        path: "/myCart",
-        element: <Cart></Cart>
-      },
-
       {
         path: '/allBrands',
         element: <AllBrands></AllBrands>
@@ -52,14 +47,21 @@ const routers = createBrowserRouter([
         element: <AllCards></AllCards>
       },
       {
-        path: '/cartDetails/:id',
-        element: <PrivateRoute><CartDetails></CartDetails>  </PrivateRoute>
+        path: '/myCart',
+        element: <Cart></Cart>,
+        loader: () => fetch(`http://localhost:5000/cartDetails`)
       },
+      // {
+      //   path: '/cartDetails/:id',
+      //   element: <PrivateRoute><CartDetails></CartDetails>  </PrivateRoute>
+      // },
+
+
       // optional , remove later
       {
         path: '/cartDetails/:id',
         element: <CartDetails></CartDetails>,
-        loader: ({ _id }) => fetch(`http://localhost:5173/cartDetails/${_id}`),
+        loader: ({ params }) => fetch(`http://localhost:5000/cartDetails/${params.id}`),
 
       },
       //  until here
@@ -72,7 +74,6 @@ const routers = createBrowserRouter([
         path: '/signup',
         element: <Signup></Signup>
       },
-
 
     ]
   }

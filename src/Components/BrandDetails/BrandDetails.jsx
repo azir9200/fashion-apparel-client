@@ -9,19 +9,14 @@ const BrandDetails = () => {
   console.log(brands);
   return (
     <div className="  md:flex  gap-6 "  >
-
-
       <div className=" grid grid-cols-1 md:grid-cols-2  gap-6" >
-
         {
           brands.map(brand => <BrandShow
             key={brand.id}
             brand={brand}
           ></BrandShow>)
         }
-
       </div>
-
       {/* Advertiese Section for the main page  */}
 
       <div className="w-1/3" >

@@ -8,7 +8,6 @@ const Signup = () => {
 
 
   const handleRegister = (event) => {
-
     event.preventDefault();
 
     const form = event.target;
