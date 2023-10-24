@@ -18,7 +18,7 @@ const Provider = ({ children }) => {
     return createUserWithEmailAndPassword(auth, email, password)
   }
 
-  const login = (email, password) => {
+  const userLogin = (email, password) => {
     console.log(email, password);
     return signInWithEmailAndPassword(auth, email, password)
 
@@ -44,7 +44,7 @@ const Provider = ({ children }) => {
     loading,
     createUser,
     signOut,
-    login,
+    userLogin,
   }
 
   return (
