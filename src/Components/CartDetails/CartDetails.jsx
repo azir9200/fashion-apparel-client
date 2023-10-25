@@ -13,7 +13,7 @@ const CartDetails = () => {
   const { name, photo, brandName, price, description, rating } = productData;
 
   const handleAddToCart = () => {
-    fetch("http://localhost:5000/addProductToCart", {
+    fetch("https://fashion-apparel-server-pe9ejalgf-azir-uddins-projects.vercel.app/addProductToCart", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

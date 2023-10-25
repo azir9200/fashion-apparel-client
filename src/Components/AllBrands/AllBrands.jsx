@@ -20,7 +20,7 @@ const AllBrands = () => {
 
     console.log(newBrand);
     // send data  to server
-    fetch('http://localhost:5000/allBrands', {
+    fetch('https://fashion-apparel-server-pe9ejalgf-azir-uddins-projects.vercel.app/allBrands', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'

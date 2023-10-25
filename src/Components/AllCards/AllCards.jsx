@@ -27,7 +27,7 @@ const AddProduct = () => {
     console.log(newCard);
     // send data  to server
 
-    fetch("http://localhost:5000/allcards", {
+    fetch("https://fashion-apparel-server-pe9ejalgf-azir-uddins-projects.vercel.app/allcards", {
       method: "POST",
       headers: {
         "content-type": "application/json",

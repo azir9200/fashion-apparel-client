@@ -20,7 +20,7 @@ const routers = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/allbrands"),
+        loader: () => fetch("https://fashion-apparel-server-pe9ejalgf-azir-uddins-projects.vercel.app/allbrands"),
       },
       {
         path: "/login",
@@ -61,13 +61,13 @@ const routers = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/cartDetails?id=${params.id}`),
+          fetch(`https://fashion-apparel-server-pe9ejalgf-azir-uddins-projects.vercel.app/cartDetails?id=${params.id}`),
       },
       //  until here
       {
         path: "/brandDetails/:name",
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/allCards/${params.name}`),
+          fetch(`https://fashion-apparel-server-pe9ejalgf-azir-uddins-projects.vercel.app/allCards/${params.name}`),
         element: <BrandDetails></BrandDetails>,
       },
     ],

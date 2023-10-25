@@ -54,7 +54,7 @@ const Register = () => {
       .then((userCredential) => {
         const user = userCredential.user;
         console.log(user);
-        fetch(`http://localhost:5000/addNewCustomer`, {
+        fetch(`https://fashion-apparel-server-pe9ejalgf-azir-uddins-projects.vercel.app/addNewCustomer`, {
           method: "POST",
           headers: {
             "content-type": "application/json",

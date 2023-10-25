@@ -8,7 +8,7 @@ const Cart = () => {
   console.log(user);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/getCartData?userEmail=${user.email}`)
+    fetch(`https://fashion-apparel-server-pe9ejalgf-azir-uddins-projects.vercel.app/getCartData?userEmail=${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         setCartData(data);
@@ -18,7 +18,7 @@ const Cart = () => {
 
   const handleRemoveFromCart = (productId) => {
     console.log(productId);
-    fetch(`http://localhost:5000/deleteCardData`, {
+    fetch(`https://fashion-apparel-server-pe9ejalgf-azir-uddins-projects.vercel.app/deleteCardData`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
