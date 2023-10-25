@@ -1,8 +1,6 @@
-
-
-const HomeTwo = () => {
+const BrandPromotion = () => {
   return (
-    <div className="relative flex w-full max-w-full flex-row-reverse rounded-xl bg-white bg-clip-border text-gray-700  shadow-xl">
+    <div className="relative flex w-full max-w-full flex-row-reverse rounded-xl bg-white bg-clip-border text-gray-700  shadow-xl py-4">
       <div className="relative w-2/5 m-0 overflow-hidden text-gray-700 bg-white rounded-r-none shrink-0 rounded-xl bg-clip-border">
         <img
           src="https://i.ibb.co/LSJ8T6H/modern-office-desk-composition.jpg"
@@ -19,12 +17,12 @@ const HomeTwo = () => {
         <p className="block mb-8 font-sans text-base antialiased font-normal leading-relaxed text-gray-700">
           Like so many organizations these days, Autodesk is a company in
           transition. It was until recently a traditional boxed software company
-          selling licenses. Yet its own business model disruption is only part of
-          the story
+          selling licenses. Yet its own business model disruption is only part
+          of the story
         </p>
         <a className="inline-block" href="#">
           <button
-            className="flex items-center gap-2 px-6 py-3 font-sans text-xs font-bold text-center text-pink-500 uppercase align-middle transition-all rounded-lg select-none hover:bg-pink-500/10 active:bg-pink-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+            className="flex items-center gap-2 text-xl  font-bold text-pink-500 uppercase transition-all hover:bg-blue-100 hover:px-4 hover:py-2 hover:rounded-3xl active:bg-pink-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none "
             type="button"
           >
             Learn More
@@ -50,4 +48,4 @@ const HomeTwo = () => {
   );
 };
 
-export default HomeTwo;
+export default BrandPromotion;
